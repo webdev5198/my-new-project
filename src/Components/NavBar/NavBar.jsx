@@ -14,14 +14,15 @@ import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
       
       
     return(
-        <nav>
+        <nav className = "text-black p-6 bg-gray-300">
          <div clssName="md:hidden text-2xl"onClick = {() => setOpen(!open)}>
             {
                 open === true ? <AiOutlineClose></AiOutlineClose>:  <AiOutlineMenu className=" "></AiOutlineMenu>
             }
 
            </div>
-            <ul className ="md:flex">
+    <ul className = {`md:flex duration-1000 absolute  md:static${open ? 'top-16': '-top-60'} bg-purple-800 px-6 `}>
+
             {
                 routes.map(route => <Link key= {route.id} route={route}>
                 </Link> )
